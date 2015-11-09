@@ -25,3 +25,4 @@ mongodb-document-upload:1.0
 slack:1.8
 ruby-runtime:0.12
 gitlab-hook:1.4.0
+jacoco:1.0.19
