@@ -11,7 +11,7 @@ RUN apt-get update \
       && rm -rf /var/lib/apt/lists/*
 RUN echo "jenkins ALL=NOPASSWD: ALL" >> /etc/sudoers
 
-
+# install java and some i386 lib for android-sdk aapt tool 
 RUN dpkg --add-architecture i386
 RUN apt-get update -qq
 RUN apt-get install -y expect
@@ -24,10 +24,8 @@ RUN apt-get clean
 
 
 # start configre jenkins
-
 RUN apt-get update && apt-get install -y wget git curl zip && rm -rf /var/lib/apt/lists/*
 
-#RUN apt-get install lib32stdc++6 lib32z1
 
 ENV JENKINS_HOME /var/jenkins_home
 ENV JENKINS_SLAVE_AGENT_PORT 50000
